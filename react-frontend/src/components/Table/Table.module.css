@@ -1,0 +1,347 @@
+.container {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  /* margin-bottom: 50px; */
+  overflow-x: scroll;
+}
+.container thead tr {
+  background-color: #0b6fa4;
+  color: var(--white);
+}
+
+.container thead td {
+  font-weight: 600;
+}
+
+.container tbody tr:nth-child(even) {
+  background-color: #d0e4f5;
+}
+
+.container tbody tr:nth-child(odd) {
+  background-color: var(--white);
+}
+
+.container tr {
+  color: var(--black1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.container tr:last-child {
+  border-bottom: none;
+}
+
+.container tr td {
+  padding: 10px;
+  border-left: 2px solid var(--white);
+}
+
+/* .container tr td:last-child {
+  text-align: end;
+} */
+
+.container tr td {
+  text-align: center;
+}
+
+/* .container tbody tr:hover {
+  background: var(--blue);
+  color: var(--white);
+} */
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.iconButton {
+  border: none;
+  cursor: pointer;
+  padding: 5px 5px;
+  border-radius: 50px;
+  display: flex;
+  /* margin: 0 5px; */
+}
+
+.iconButton.info {
+  background: #0dcaf0;
+}
+.iconButton.edit {
+  background: #ffc107;
+}
+.iconButton.delete {
+  background: #dc3545;
+}
+
+.icon {
+  font-size: 20px;
+  color: var(--white);
+}
+
+.center {
+  text-align: center !important;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  background-color: var(--blue);
+}
+
+.input input[type='number'] {
+  width: 100px;
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input input[type='number']:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 4px rgba(33, 150, 243, 0.5);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  margin-left: 5px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.switch input[type='checkbox']:checked + .slider {
+  background-color: #2196f3;
+}
+
+.switch input[type='checkbox']:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.submit {
+  padding: 10px 50px;
+  margin: 10px 0;
+  font-size: 16px;
+  background-color: #279ad7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-bottom: 50px;
+}
+
+.submit:hover {
+  background-color: #0b6fa4;
+}
+
+.submit:focus {
+  outline: none;
+}
+
+.submit:disabled {
+  cursor: not-allowed;
+}
+
+.tableTitle {
+  text-align: center;
+  color: var(--blue);
+  margin: 5px 0;
+  display: none;
+}
+
+.address {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.showOnPrint {
+  display: none !important;
+}
+
+.showRowOnPrint {
+  display: none;
+}
+
+.marginBbottom0 {
+  margin-bottom: 0 !important;
+}
+
+.payment_amount {
+  min-width: 150px;
+}
+@media print {
+  .printTableContainer {
+    max-width: 100%;
+  }
+  .hideOnPrint {
+    display: none;
+  }
+  .tableTitle {
+    display: block;
+  }
+
+  .showOnPrint {
+    display: block !important;
+  }
+
+  .showRowOnPrint {
+    display: block;
+  }
+  /* .printTableContainer {
+    overflow: scroll;
+  } */
+  .printTableContainer {
+    height: 100%; /* Use 100% here to support printing more than a single page*/
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+  .container thead tr,
+  .container tbody tr,
+  .backTransparent {
+    color: var(--black1) !important;
+    background: transparent !important;
+  }
+  .printHeader {
+    height: 90px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* display: flex; */
+    /* justify-content: flex-end; */
+  }
+  .printHeaderLarge {
+    height: 150px;
+  }
+  .printHeader img {
+    height: 100%;
+    padding: 10px 0;
+    justify-self: flex-end;
+  }
+  @page {
+    size: landscape;
+  }
+  body {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* background-color: red; */
+    background-image: url('../../assets/creatorCityBackgroundx25.png');
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    -moz-print-color-adjust: exact;
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .container thead tr {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .container tr td {
+    padding: 0px 10px;
+    font-size: 13px;
+  }
+
+  .container tr td:nth-child(2) {
+    min-width: 180px;
+    line-height: 20px;
+    padding: 10px;
+  }
+
+  .iconButton {
+    margin: 8px 0px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container thead tr {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .container tr td:nth-child(2) {
+    font-size: 13px;
+    min-width: 130px;
+    line-height: 20px;
+    padding: 10px;
+  }
+
+  .iconButton {
+    margin: 8px 0px;
+  }
+
+  .actions {
+    align-self: center;
+    margin-top: 7px;
+  }
+
+  .iconButton {
+    padding: 4px;
+  }
+
+  .submit {
+    right: 0;
+  }
+
+  .reference_cell {
+    min-width: 345px !important;
+  }
+  .date_cell {
+    min-width: 100px !important;
+  }
+
+  .total_work_hour {
+    min-width: 100px;
+  }
+
+  .total_gross {
+    min-width: 100px;
+  }
+
+  .type {
+    min-width: 150px;
+  }
+
+  .mobile {
+    min-width: 150px;
+  }
+}

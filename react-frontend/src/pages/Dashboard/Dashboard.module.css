@@ -1,0 +1,114 @@
+.table {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  margin-top: 10px;
+  display: grid;
+  background: var(--white);
+  border-radius: 20px;
+  overflow-x: scroll;
+}
+
+.cards {
+  box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.header h2,
+.charts h2 {
+  font-weight: 600;
+  color: var(--blue);
+  text-align: center;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.header h3,
+.charts h3 {
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.btn {
+  position: relative;
+  padding: 8px 15px;
+  background: var(--blue);
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.charts {
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.sendButtonContainer {
+  display: flex;
+  justify-content: end;
+  padding-right: 20px;
+}
+
+.sendButton {
+  /* margin: 0 auto; */
+  align-self: center;
+  padding: 8px 16px;
+  background-color: #fc3267;
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sendButton:disabled {
+  cursor: not-allowed;
+}
+
+.sendButton:hover {
+  background-color: #d00f43;
+}
+
+@media (max-width: 767px) {
+  .header h2,
+  .charts h2,
+  .header h3,
+  .charts h3 {
+    font-size: 1.4rem;
+  }
+
+  .header {
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    padding: 6px 12px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .cards {
+    margin-bottom: 20px;
+  }
+
+  .table {
+    padding: 10px;
+    margin-top: 0;
+  }
+
+  .charts {
+    padding: 10px;
+  }
+}

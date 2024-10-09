@@ -1,0 +1,124 @@
+.formContainer {
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header h2 {
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.btn {
+  position: relative;
+  padding: 5px 10px;
+  background: #279ad7;
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+}
+
+.btn:hover {
+  background: #0b6fa4;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2em;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.formInput input,
+.formInput select {
+  padding: 10px;
+  margin: 5px 0px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.formInput label {
+  font-size: 13px;
+  color: gray;
+}
+
+.formInput span {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+}
+
+.formInput input:invalid[focused='true'] {
+  border: 1px solid red;
+}
+
+.formInput input:invalid[focused='true'] ~ span {
+  display: block;
+}
+
+.submit {
+  padding: 10px 50px;
+  margin: 10px 0;
+  margin-top: 24px;
+  font-size: 16px;
+  background-color: #279ad7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.submit:hover {
+  background-color: #0b6fa4;
+}
+
+.submit:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .submit {
+    margin: 0;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 55px;
+  }
+
+  .form {
+    display: block;
+  }
+}

@@ -1,0 +1,47 @@
+.formInput {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.formInput input,
+.formInput select {
+  padding: 10px;
+  margin: 5px 0px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.formInput label {
+  font-size: 13px;
+  color: gray;
+}
+
+.formInput span {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+}
+
+.formInput input:invalid[focused='true'] {
+  border: 1px solid red;
+}
+
+.formInput input:invalid[focused='true'] ~ span {
+  display: block;
+}
+
+.formInput.checkbox {
+  flex-direction: row;
+  gap: 10px;
+}
+
+.formInput.checkbox label {
+  align-self: center;
+  cursor: pointer;
+}
+.formInput.checkbox input {
+  cursor: pointer;
+}

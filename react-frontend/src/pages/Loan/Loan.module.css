@@ -1,0 +1,125 @@
+.table {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  margin-top: 10px;
+  display: grid;
+  /* min-height: 500px; */
+  background: var(--white);
+  box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow-x: scroll;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  /* padding-bottom: 20px; */
+}
+
+.header h2 {
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.filter,
+.buttons {
+  display: flex;
+  gap: 25px;
+}
+
+.btn {
+  position: relative;
+  padding: 5px 10px;
+  background: #279ad7;
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+  line-height: 24px;
+}
+
+.btn:hover {
+  background: #0b6fa4;
+}
+
+.search {
+  position: relative;
+  width: 300px;
+  margin: 0 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input,
+.month label select,
+.year label select {
+  width: 100%;
+  /* height: 40px; */
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid var(--black2);
+}
+
+.month label select,
+.year label select {
+  padding-left: 15px;
+  color: var(--black1);
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2em;
+}
+
+.addButton {
+  padding: 8px 16px;
+  background-color: #279ad7;
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.addButton:hover {
+  background-color: #0b6fa4;
+}
+
+@media only screen and (max-width: 991px) {
+  .header {
+    align-items: start;
+    gap: 15px;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    align-items: start;
+    flex-direction: column;
+  }
+  h2 {
+    order: 2;
+    margin: 5px 0;
+  }
+  .month {
+    padding: 1px;
+    order: 3;
+  }
+
+  .buttons {
+    gap: 30px;
+    order: 2;
+  }
+}

@@ -1,0 +1,258 @@
+.container {
+  position: fixed;
+  width: 230px;
+  height: 100vh;
+  background: #04407e;
+  border-left: 10px solid #04407e;
+  transition: 0.5s;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+}
+.container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.container.shortMenu {
+  width: 75px;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 70px;
+}
+
+.menuItem {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  cursor: pointer;
+}
+
+.active {
+  background: var(--white);
+}
+
+.menuItem:hover .menuLink {
+  font-weight: 600;
+  transition: 0.2s;
+  color: #00acc1;
+}
+
+.menuItem:hover .icon,
+.active .icon {
+  font-size: 1.5rem;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.menuItem:nth-child(1) {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* pointer-events: none; */
+  font-weight: 600;
+  font-size: 1.7rem;
+  min-width: 50px;
+}
+
+.menuLink {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: #8092a9;
+  align-items: center;
+  z-index: 3;
+}
+
+.active .menuLink {
+  color: #04407e;
+  font-weight: 600;
+}
+
+.icon {
+  position: relative;
+  display: block;
+  min-width: 50px;
+  height: 50px;
+  line-height: 55px;
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+/* .icon:nth-child(1) {
+  height: 50px;
+  line-height: 65px;
+  text-align: center;
+  min-width: 35px;
+} */
+.title {
+  position: relative;
+  display: block;
+  padding: 0 3px;
+  height: 50px;
+  line-height: 50px;
+  text-align: start;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.shopTitle {
+  line-height: 21px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.title:nth-child(1) {
+  font-size: 35px !important;
+  align-self: start;
+}
+/* Curve outside */
+/* .menuItem:hover .menuLink::before, */
+.active .menuLink::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+/* .menuItem:hover .menuLink::after, */
+.active .menuLink::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+.container.shortMenu .menuItem .title {
+  display: none;
+}
+
+@media only screen and (max-width: 992px) {
+  /* .container {
+    left: -300px;
+  }
+  .active {
+    left: 0;
+    width: 300px;
+  } */
+  .container {
+    width: 55px !important;
+  }
+
+  /* .menuItem:nth-child(1) .title {
+    line-height: 65px;
+  } */
+
+  .icon {
+    min-width: 35px;
+    height: 35px;
+    line-height: 45px;
+    z-index: 1;
+  }
+
+  .menuItem {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+
+  .active .menuLink::before,
+  .active .menuLink::after {
+    border-radius: 50%;
+  }
+
+  .container.shortMenu {
+    width: 250px !important;
+  }
+
+  .container.notShortMenu .menuItem .title {
+    display: none;
+  }
+  .container.shortMenu .menuItem .title {
+    display: block;
+  }
+  .container.notShortMenu .menuItem .icon {
+    height: 45px;
+    min-width: 38px;
+    line-height: 50px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    border-left: 0px;
+    width: 70px !important;
+    margin-bottom: 20px;
+  }
+
+  .menu {
+    left: 5px;
+  }
+  /* .menuItem:nth-child(1) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 35px;
+  } */
+
+  .menuItem {
+    border-top-left-radius: 65px;
+    border-bottom-left-radius: 65px;
+  }
+
+  .active .menuLink::before,
+  .active .menuLink::after {
+    border-radius: 70%;
+  }
+  .menuItem:nth-child(1) .title {
+    line-height: 40px;
+    padding: 0 10px;
+    font-size: 1rem;
+  }
+
+  .icon {
+    height: 45px;
+    min-width: 38px;
+
+    line-height: 45px;
+  }
+  .icon:nth-child(1) {
+    height: 45px;
+    min-width: 40px;
+    line-height: 50px;
+  }
+
+  /* .title {
+    height: 45px;
+    line-height: 20px;
+    font-size: 15px;
+    padding: 0px;
+  } */
+
+  .container.shortMenu {
+    width: 188px !important;
+  }
+
+  .shopTitle {
+    line-height: 21px !important;
+    font-size: 14px !important;
+    letter-spacing: 1px !important;
+  }
+}
